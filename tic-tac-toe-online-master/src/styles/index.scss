@@ -1,0 +1,119 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+body,
+html {
+  margin: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+a {
+  color: #ffffff;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.show {
+  animation: show 0.25s;
+}
+
+.back {
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  right: 12.5px;
+  top: 12.5px;
+  &:after {
+    border-radius: 5px;
+    display: block;
+    content: "";
+    height: 4px;
+    width: 25px;
+    background-color: #d3d3d3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &:before {
+    border-radius: 5px;
+    display: block;
+    content: "";
+    height: 4px;
+    width: 25px;
+    background-color: #d3d3d3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(1, 1, 1, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:focus{
+  outline: none;
+}
+
+.App-dark{
+  background-color: #1a1a1a;
+}
+
+.App-white{
+  background-color: #ffffff;
+  transition: background-color .2s;
+  color: black;
+  font-weight: 500;
+  .back {
+    &:after {
+      background-color: #121212;
+    }
+    &:before {
+      background-color: #121212;
+    }
+  }
+  input{
+    background: #D9D9D9!important;
+  }
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+  padding: 0 10px;
+}
+
+.title{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}

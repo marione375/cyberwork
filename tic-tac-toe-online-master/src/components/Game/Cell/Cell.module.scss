@@ -1,0 +1,91 @@
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #888888 3.5px solid;
+  user-select: none;
+  height: 100% !important;
+  padding: 0;
+
+  .cellContent {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .cellX {
+      width: 75%;
+      position: relative;
+      z-index: 10;
+      animation: cellClickAnimation 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+
+      .cellLine {
+        width: 100%;
+        height: 5.5px;
+        border-radius: 5px;
+      }
+
+      .cellLineFirst {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      .cellLineSecond {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+
+    .cellO {
+      position: relative;
+      z-index: 10;
+      animation: cellClickAnimation 0.15s;
+      width: 60%;
+      height: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .circle {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 5.5px solid;
+      }
+    }
+
+    .line {
+      height: 20px;
+      width: 300%;
+      z-index: 20;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0%;
+    }
+
+    .cellWhite {
+      border: #c0c0c0 3.5px solid;
+    }
+  }
+}
+
+@keyframes cellClickAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
